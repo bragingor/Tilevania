@@ -59,7 +59,8 @@ public class PlayerMovement : MonoBehaviour
         }
         _rb.gravityScale *= 0f;
         Vector2 climbingVector = new Vector2(_rb.linearVelocityX, moveInput.y * climbSpeed);
-        while (Mathf.Abs(climbingVector.y) >= 1f) { _anim.SetBool("isClimbing", false); }
+        _anim.SetBool("isClimbing", true);
+
         _rb.linearVelocityY = climbingVector.y;
     }
 
