@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 9147898075178683851}
   - component: {fileID: 7081572198391084832}
   m_Layer: 0
-  m_Name: Climbing
+  m_Name: Climbing Palette
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

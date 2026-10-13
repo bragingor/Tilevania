@@ -10,14 +10,16 @@ public class PlayerMovement : MonoBehaviour
 
     private Rigidbody2D _rb;
     private Animator _anim;
-    private CapsuleCollider2D _playerCollider;
+    private CapsuleCollider2D _playerCapsuleCollider;
+    private BoxCollider2D _playerBoxCollider;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
         _anim = GetComponent<Animator>();
-        _playerCollider = GetComponent<CapsuleCollider2D>();
+        _playerCapsuleCollider = GetComponent<CapsuleCollider2D>();
+        _playerBoxCollider = GetComponent<BoxCollider2D>();
 
         startingGravity = _rb.gravityScale;
     }
@@ -36,7 +38,7 @@ public class PlayerMovement : MonoBehaviour
     }
     void OnJump(InputValue value)
     {
-        if (!_playerCollider.IsTouchingLayers(LayerMask.GetMask("Ground"))) { return; }
+        if (!_playerBoxCollider.IsTouchingLayers(LayerMask.GetMask("Ground"))) { return; }
         if (value.isPressed)
         {
             _rb.AddForce(Vector2.up * jumpForce * 1000 * Time.deltaTime);
@@ -51,7 +53,7 @@ public class PlayerMovement : MonoBehaviour
     }
     void ClimbUp()
     {
-        if (!_playerCollider.IsTouchingLayers(LayerMask.GetMask("Climbing"))) 
+        if (!_playerCapsuleCollider.IsTouchingLayers(LayerMask.GetMask("Climbing"))) 
         { 
             _rb.gravityScale = startingGravity;
             _anim.SetBool("isClimbing", false);
