@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - Platform
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -14,8 +16,8 @@ TagManager:
   - Ground
   - Climbing
   - Background
-  - 
-  - 
+  - SlimeEnemy
+  - Bouncing
   - 
   - 
   - 
@@ -58,6 +60,9 @@ TagManager:
     locked: 0
   - name: Bouncing
     uniqueID: 1041965749
+    locked: 0
+  - name: Enemy
+    uniqueID: 3258805033
     locked: 0
   m_RenderingLayers:
   - Default
