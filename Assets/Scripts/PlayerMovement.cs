@@ -5,6 +5,10 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float walkSpeed, jumpForce, climbSpeed;
+    [SerializeField] private Vector2 deathKickedVelocity;
+
+    [SerializeField] private GameObject bullet;
+    [SerializeField] private Transform gunPosition;
 
     private Vector2 moveInput;
     private float startingGravity;
@@ -31,6 +35,14 @@ public class PlayerMovement : MonoBehaviour
         Walk();
         ClimbUp();
         FlippingSprite();
+    }
+
+    void OnAttack(InputValue value)
+    {
+        if (value.isPressed)
+        {
+            Instantiate(bullet, gunPosition.position, Quaternion.identity);
+        }
     }
 
     void OnMove(InputValue value)
@@ -82,6 +94,7 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.tag == "Enemy")
         {
             _anim.SetTrigger("isDying");
+            _rb.linearVelocity = deathKickedVelocity;
             this.enabled = false;
         }
     }

@@ -18,8 +18,8 @@ TagManager:
   - Background
   - SlimeEnemy
   - Bouncing
-  - 
-  - 
+  - Hazards
+  - Bullet
   - 
   - 
   - 
@@ -49,20 +49,23 @@ TagManager:
   - name: Platform
     uniqueID: 3305821663
     locked: 0
-  - name: Water
-    uniqueID: 2587753177
+  - name: Climbing
+    uniqueID: 744388215
     locked: 0
   - name: Player
     uniqueID: 1109664547
     locked: 0
-  - name: Climbing
-    uniqueID: 744388215
+  - name: Water
+    uniqueID: 2587753177
     locked: 0
   - name: Bouncing
     uniqueID: 1041965749
     locked: 0
   - name: Enemy
     uniqueID: 3258805033
+    locked: 0
+  - name: Hazards
+    uniqueID: 1244722041
     locked: 0
   m_RenderingLayers:
   - Default
