@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Platform
   - Enemy
+  - Exit
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,7 @@ TagManager:
   - Bouncing
   - Hazards
   - Bullet
-  - 
+  - Exit
   - 
   - 
   - 
@@ -66,6 +67,9 @@ TagManager:
     locked: 0
   - name: Hazards
     uniqueID: 1244722041
+    locked: 0
+  - name: Interactables
+    uniqueID: 3836699647
     locked: 0
   m_RenderingLayers:
   - Default
