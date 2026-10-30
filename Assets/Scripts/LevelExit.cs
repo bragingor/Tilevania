@@ -22,13 +22,12 @@ public class LevelExit : MonoBehaviour
 
         if (SceneManager.GetActiveScene().buildIndex == SceneManager.sceneCountInBuildSettings)
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(0); //lol
         }
         else
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
-
         yield return null;
     }
 
