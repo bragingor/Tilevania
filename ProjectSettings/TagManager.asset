@@ -22,7 +22,7 @@ TagManager:
   - Hazards
   - Bullet
   - Exit
-  - 
+  - Interactables
   - 
   - 
   - 
@@ -70,6 +70,9 @@ TagManager:
     locked: 0
   - name: Interactables
     uniqueID: 3836699647
+    locked: 0
+  - name: UI
+    uniqueID: 2983617655
     locked: 0
   m_RenderingLayers:
   - Default

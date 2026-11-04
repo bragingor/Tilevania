@@ -10,6 +10,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private GameObject bullet;
     [SerializeField] private Transform gunPosition;
 
+    [SerializeField] private AudioClip jumpSound, deathSound, bulletSound;
+
     private Vector2 moveInput;
     private float startingGravity;
 
@@ -17,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
     private Animator _anim;
     private CapsuleCollider2D _playerCapsuleCollider;
     private BoxCollider2D _playerBoxCollider;
+    private AudioSource _audioSource;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -25,6 +28,7 @@ public class PlayerMovement : MonoBehaviour
         _anim = GetComponent<Animator>();
         _playerCapsuleCollider = GetComponent<CapsuleCollider2D>();
         _playerBoxCollider = GetComponent<BoxCollider2D>();
+        _audioSource = GetComponent<AudioSource>();
 
         startingGravity = _rb.gravityScale;
     }
@@ -41,6 +45,8 @@ public class PlayerMovement : MonoBehaviour
     {
         if (value.isPressed)
         {
+            _audioSource.clip = bulletSound;
+            _audioSource.Play();
             Instantiate(bullet, gunPosition.position, Quaternion.identity);
         }
     }
@@ -55,6 +61,8 @@ public class PlayerMovement : MonoBehaviour
         if (value.isPressed)
         {
             _rb.AddForce(Vector2.up * jumpForce * 1000 * Time.deltaTime);
+            _audioSource.clip = jumpSound;
+            _audioSource.Play();
         }
     }
 
@@ -94,8 +102,11 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.tag == "Enemy")
         {
             _anim.SetTrigger("isDying");
+            _audioSource.clip = deathSound;
+            _audioSource.Play();
             _rb.linearVelocity = deathKickedVelocity;
             this.enabled = false;
+            FindFirstObjectByType<GameSession>().ProcessDeath();
         }
     }
 }
