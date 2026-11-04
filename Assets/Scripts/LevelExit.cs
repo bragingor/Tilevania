@@ -20,7 +20,7 @@ public class LevelExit : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
 
-        if (SceneManager.GetActiveScene().buildIndex == SceneManager.sceneCountInBuildSettings)
+        if (SceneManager.GetActiveScene().buildIndex == SceneManager.sceneCountInBuildSettings - 1)
         {
             SceneManager.LoadScene(0); //lol
         }

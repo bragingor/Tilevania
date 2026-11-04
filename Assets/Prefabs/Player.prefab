@@ -204,7 +204,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 1.3
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -258,10 +258,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be88e38997fa015449e2c2bdf0c684e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  walkSpeed: 5
-  jumpForce: 35
+  walkSpeed: 3
+  jumpForce: 15
   climbSpeed: 5
   deathKickedVelocity: {x: 5, y: 5}
+  bounceVelocity: {x: 0, y: 8}
   bullet: {fileID: 3735470468159641753, guid: 7400964bba32f424d9ec80a027b6444a, type: 3}
   gunPosition: {fileID: 8142101657790990743}
   jumpSound: {fileID: 8300000, guid: 13aa7302d32e1c3459c0d374a405d284, type: 3}

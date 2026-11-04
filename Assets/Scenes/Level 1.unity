@@ -81287,10 +81287,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2406643256504851789, guid: e5bc86f630cce014db6b0e0205901424, type: 3}
-      propertyPath: m_GravityScale
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5128306619467732182, guid: e5bc86f630cce014db6b0e0205901424, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.84
@@ -81306,14 +81302,6 @@ PrefabInstance:
     - target: {fileID: 5128306619467732182, guid: e5bc86f630cce014db6b0e0205901424, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5569523261276349172, guid: e5bc86f630cce014db6b0e0205901424, type: 3}
-      propertyPath: jumpForce
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 5569523261276349172, guid: e5bc86f630cce014db6b0e0205901424, type: 3}
-      propertyPath: walkSpeed
-      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6585495678860768078, guid: e5bc86f630cce014db6b0e0205901424, type: 3}
       propertyPath: m_Name
@@ -81439,6 +81427,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2759614364719993729, guid: a0272890bb534f94b9433b37d28e5ba4, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.6462264
+      objectReference: {fileID: 0}
+    - target: {fileID: 2759614364719993729, guid: a0272890bb534f94b9433b37d28e5ba4, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.9607842
+      objectReference: {fileID: 0}
+    - target: {fileID: 2759614364719993729, guid: a0272890bb534f94b9433b37d28e5ba4, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2759614364719993729, guid: a0272890bb534f94b9433b37d28e5ba4, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4289066495
+      objectReference: {fileID: 0}
     - target: {fileID: 4243350348617360972, guid: a0272890bb534f94b9433b37d28e5ba4, type: 3}
       propertyPath: m_Name
       value: GameSession
@@ -81446,6 +81450,10 @@ PrefabInstance:
     - target: {fileID: 6209327315499655516, guid: a0272890bb534f94b9433b37d28e5ba4, type: 3}
       propertyPath: m_Camera
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7287466079953390576, guid: a0272890bb534f94b9433b37d28e5ba4, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4290953981
       objectReference: {fileID: 0}
     - target: {fileID: 7394030290542749476, guid: a0272890bb534f94b9433b37d28e5ba4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -83105,7 +83113,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 17
-      m_TileSpriteIndex: 8
+      m_TileSpriteIndex: 13
       m_TileMatrixIndex: 4
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -83596,8 +83604,8 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 37
     m_Data: {fileID: -7832389824997676707, guid: f31cbc0ff456a8c43a5a70c33beb0b05, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: -3326836957996475874, guid: f31cbc0ff456a8c43a5a70c33beb0b05, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 6
     m_Data: {fileID: 3803662930465603148, guid: f31cbc0ff456a8c43a5a70c33beb0b05, type: 3}
   - m_RefCount: 13
@@ -83606,8 +83614,8 @@ Tilemap:
     m_Data: {fileID: 7953296568139915108, guid: f31cbc0ff456a8c43a5a70c33beb0b05, type: 3}
   - m_RefCount: 2
     m_Data: {fileID: -3503154757471595975, guid: f31cbc0ff456a8c43a5a70c33beb0b05, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: -3326836957996475874, guid: f31cbc0ff456a8c43a5a70c33beb0b05, type: 3}
   - m_RefCount: 26
     m_Data: {fileID: -4977721373819348528, guid: f31cbc0ff456a8c43a5a70c33beb0b05, type: 3}
   - m_RefCount: 4

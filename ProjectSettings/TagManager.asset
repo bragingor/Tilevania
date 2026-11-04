@@ -7,6 +7,7 @@ TagManager:
   - Platform
   - Enemy
   - Exit
+  - Bouncing
   layers:
   - Default
   - TransparentFX

@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float walkSpeed, jumpForce, climbSpeed;
-    [SerializeField] private Vector2 deathKickedVelocity;
+    [SerializeField] private Vector2 deathKickedVelocity, bounceVelocity;
 
     [SerializeField] private GameObject bullet;
     [SerializeField] private Transform gunPosition;
@@ -68,7 +68,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Walk()
     {
-        var moveVector = new Vector2(moveInput.x * walkSpeed * 100 * Time.deltaTime, _rb.linearVelocityY);
+        var moveVector = new Vector2(moveInput.x * walkSpeed, _rb.linearVelocityY);
         _rb.linearVelocity = moveVector;
         _anim.SetBool("isRunning", (Mathf.Abs(moveVector.x)) >= 1f);
     }
@@ -107,6 +107,10 @@ public class PlayerMovement : MonoBehaviour
             _rb.linearVelocity = deathKickedVelocity;
             this.enabled = false;
             FindFirstObjectByType<GameSession>().ProcessDeath();
+        }
+        else if (collision.gameObject.tag == "Bouncing")
+        {
+            _rb.linearVelocityY = bounceVelocity.y;
         }
     }
 }
