@@ -1,6 +1,8 @@
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -10,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private GameObject bullet;
     [SerializeField] private Transform gunPosition;
 
-    [SerializeField] private AudioClip jumpSound, deathSound, bulletSound;
+    [SerializeField] private AudioClip jumpSound, deathSound, bulletSound, bounceSound, levelExitSound, walkingSound;
 
     private Vector2 moveInput;
     private float startingGravity;
@@ -39,6 +41,11 @@ public class PlayerMovement : MonoBehaviour
         Walk();
         ClimbUp();
         FlippingSprite();
+
+        if (Keyboard.current[Key.Escape].isPressed)
+        {
+            Application.Quit();
+        }
     }
 
     void OnAttack(InputValue value)
@@ -54,13 +61,25 @@ public class PlayerMovement : MonoBehaviour
     void OnMove(InputValue value)
     {
         moveInput = value.Get<Vector2>();
+        if (Mathf.Abs(moveInput.x) > 0f)
+        {
+            _audioSource.clip = walkingSound;
+            _audioSource.loop = true;
+            _audioSource.Play();
+        }
+        else
+        {
+            _audioSource.Stop();
+        }
     }
     void OnJump(InputValue value)
     {
         if (!_playerBoxCollider.IsTouchingLayers(LayerMask.GetMask("Ground"))) { return; }
         if (value.isPressed)
         {
-            _rb.AddForce(Vector2.up * jumpForce * 1000 * Time.deltaTime);
+            _rb.linearVelocityY = jumpForce;
+            //_rb.AddForce(Vector2.up * jumpForce * 1000 * Time.deltaTime);
+            _audioSource.loop = false;
             _audioSource.clip = jumpSound;
             _audioSource.Play();
         }
@@ -102,15 +121,48 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.tag == "Enemy")
         {
             _anim.SetTrigger("isDying");
+            _audioSource.loop = false;
             _audioSource.clip = deathSound;
             _audioSource.Play();
             _rb.linearVelocity = deathKickedVelocity;
             this.enabled = false;
-            FindFirstObjectByType<GameSession>().ProcessDeath();
         }
         else if (collision.gameObject.tag == "Bouncing")
         {
             _rb.linearVelocityY = bounceVelocity.y;
+            _audioSource.loop = false;
+            _audioSource.clip = bounceSound;
+            _audioSource.Play();
+        }
+    }
+
+    public void ProcessDeath()
+    {
+        FindFirstObjectByType<GameSession>().ProcessDeath();
+    }
+    IEnumerator NextLevel(float time)
+    {
+        yield return new WaitForSeconds(time);
+
+        if (SceneManager.GetActiveScene().buildIndex == SceneManager.sceneCountInBuildSettings - 1)
+        {
+            SceneManager.LoadScene(0); //lol
+        }
+        else
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+        yield return null;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Exit")
+        {
+            _audioSource.loop = false;
+            _audioSource.clip = levelExitSound;
+            _audioSource.Play();
+            StartCoroutine(NextLevel(1f));
         }
     }
 }

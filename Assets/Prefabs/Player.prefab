@@ -259,15 +259,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   walkSpeed: 3
-  jumpForce: 15
+  jumpForce: 7
   climbSpeed: 5
   deathKickedVelocity: {x: 5, y: 5}
   bounceVelocity: {x: 0, y: 8}
   bullet: {fileID: 3735470468159641753, guid: 7400964bba32f424d9ec80a027b6444a, type: 3}
+  pausePanel: {fileID: 6585495678860768078}
   gunPosition: {fileID: 8142101657790990743}
   jumpSound: {fileID: 8300000, guid: 13aa7302d32e1c3459c0d374a405d284, type: 3}
   deathSound: {fileID: 8300000, guid: cc67c609f8669d045a5c85268d9d8dc1, type: 3}
   bulletSound: {fileID: 8300000, guid: 3856fb6448a02fa45819289d676c8f70, type: 3}
+  bounceSound: {fileID: 8300000, guid: acac5066ad00cdc42a35d1b7e626c75e, type: 3}
+  levelExitSound: {fileID: 8300000, guid: 26acd95fee21a9e4480af5a6ee899fa2, type: 3}
+  walkingSound: {fileID: 8300000, guid: 41409936ce4f1e64594e7e1da8c44e8a, type: 3}
 --- !u!61 &5791771757565814463
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -81443,12 +81443,24 @@ PrefabInstance:
       propertyPath: m_fontColor32.rgba
       value: 4289066495
       objectReference: {fileID: 0}
+    - target: {fileID: 2932436267549463877, guid: a0272890bb534f94b9433b37d28e5ba4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4243350348617360972, guid: a0272890bb534f94b9433b37d28e5ba4, type: 3}
       propertyPath: m_Name
       value: GameSession
       objectReference: {fileID: 0}
+    - target: {fileID: 5533819003851761442, guid: a0272890bb534f94b9433b37d28e5ba4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6209327315499655516, guid: a0272890bb534f94b9433b37d28e5ba4, type: 3}
       propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7056966275453352977, guid: a0272890bb534f94b9433b37d28e5ba4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7287466079953390576, guid: a0272890bb534f94b9433b37d28e5ba4, type: 3}
@@ -81496,7 +81508,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 5533819003851761442, guid: a0272890bb534f94b9433b37d28e5ba4, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a0272890bb534f94b9433b37d28e5ba4, type: 3}

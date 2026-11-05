@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 4041818093479095038}
   - component: {fileID: 5551878951072841765}
   - component: {fileID: 2981223629866284631}
-  - component: {fileID: 3669622511382743851}
   m_Layer: 13
   m_Name: Exit
   m_TagString: Exit
@@ -139,15 +138,3 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2, y: 2}
   m_EdgeRadius: 0
---- !u!114 &3669622511382743851
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9151839652316404941}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 170016b0528bb20499c3cc0e5d34f595, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LevelExit
